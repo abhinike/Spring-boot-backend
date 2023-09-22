@@ -3,6 +3,7 @@ package com.example.VeckorVorker.dao;
 import com.example.VeckorVorker.model.Worker;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface WorkerDao {
@@ -15,6 +16,15 @@ public interface WorkerDao {
     }
 
     List<Worker> getWorkers();
+
+    int deleteWorker(UUID uid);
+
+    Optional<Worker> getWorkerByID(UUID uid);
+
+    public int updateWorkerByID(UUID uid, Worker worker);
+
+
+
 
 
 
