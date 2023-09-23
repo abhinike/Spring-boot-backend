@@ -15,13 +15,14 @@ import lombok.Setter;
 public class Worker {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    Long Id;
+    int Id;
 
     @Column(name = "name")
     String name ;
 
-    @Column(name = "category")
-    String category;
+
+    @Column(name = "category" )
+    int category;
 
 
 }

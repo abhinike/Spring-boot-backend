@@ -29,11 +29,11 @@ public class WorkerSQLService {
         return repository.findAll();
     };
 
-    public void deleteWorkerbyID(Long id) {
+    public void deleteWorkerbyID(int id) {
         repository.deleteById(id);
     }
 
-    public Optional<Worker> getWorkerById(Long id){
+    public Optional<Worker> getWorkerById(int id){
        return repository.findById(id);
     }
 
@@ -42,6 +42,21 @@ public class WorkerSQLService {
         return repository.findAll(pageRequest);
     }
 
+
+    //update worker
+    public Optional<Worker> updateWorker(int id, Worker worker){
+
+        Optional<Worker> existingWorker = repository.findById(id);
+
+        if(!existingWorker.isEmpty()){
+            //updates fields
+            existingWorker.get().setName(worker.getName());
+            existingWorker.get().setCategory(worker.getCategory());
+
+        }
+        return existingWorker;
+
+    }
     //filter by electrician
 //    public Pgae<Worker> filterByCategory(int category)
 }

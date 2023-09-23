@@ -32,7 +32,7 @@ public class WorkerSQLController {
 
     @GetMapping
     @RequestMapping(path = "{id}")
-    Optional<Worker> getWorker(@PathVariable("id")  Long id){
+    Optional<Worker> getWorker(@PathVariable("id")  int id){
         return service.getWorkerById(id);
     }
 
